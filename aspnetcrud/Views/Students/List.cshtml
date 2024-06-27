@@ -3,3 +3,33 @@
 *@
 @{
 }
+@model List<aspnetcrud.Models.Entities.Student>
+
+<h1>Students</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Id</th>
+            <th>Id</th>
+            <th>Id</th>
+            <th>Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var students in Model)
+        {
+            <tr>
+                <td>@students.Id</td>
+                <td>@students.Name</td>
+                <td>@students.Email</td>
+                <td>@students.Phone</td>
+                <td>@students.Subscribe</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Students" asp-action="Edit" asp-route-id="@students.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
